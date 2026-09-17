@@ -1,9 +1,11 @@
 {
-	"name": "SOCKS5 Proxy Codespaces via cloudflared",
-	"image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-	"features": {
-		"ghcr.io/devcontainers-extra/features/chisel:1": {},
-		"ghcr.io/devcontainers-extra/features/cloudflared:1": {}
-	},
-	"postAttachCommand": "chisel server --socks5 & cloudflared tunnel --url http://localhost:8080"
+    "name": "SOCKS5 Proxy Codespaces via cloudflared",
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "features": {
+        "ghcr.io/devcontainers-extra/features/chisel:1": {},
+        "ghcr.io/devcontainers-extra/features/cloudflared:1": {},
+        "ghcr.io/devcontainers/features/sshd:1": {
+            "version": "latest"
+        }
+    }
 }
